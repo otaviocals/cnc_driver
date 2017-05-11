@@ -3,6 +3,8 @@ const int ledPin2 =  9;
 const int ledPin3 =  10;
 const int ledPin4 =  11;
 
+bool bit_array[] = {0,0,0,0,0,0,0,0};
+
 const int forw_but_2 = 3;
 const int back_but_2 = 4;
 const int led_ind_2 = 12;
@@ -11,11 +13,12 @@ const int forw_but_1 = 5;
 const int back_but_1 = 6;
 const int led_ind_1 = 13;
 
-const int step_delay = 40;
+const int step_delay = 10;
 
-
-int forw_state = 0;
-int back_state = 0;
+int forw_state_1 = 0;
+int back_state_1 = 0;
+int forw_state_2 = 0;
+int back_state_2 = 0;
 
 
 void setup() {
@@ -32,9 +35,13 @@ void forward_1()
 {
   //A
   digitalWrite(ledPin1, HIGH);
+  bit_array[1] = HIGH;
   digitalWrite(ledPin2, LOW);
+  bit_array[2] = LOW;
   digitalWrite(ledPin3, HIGH);
+  bit_array[3] = HIGH;
   digitalWrite(ledPin4, HIGH);
+  bit_array[4] = HIGH;
   delay(step_delay);
   //B
   digitalWrite(ledPin1, HIGH);
